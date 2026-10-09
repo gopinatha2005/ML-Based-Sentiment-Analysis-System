@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f6fb">
+    <title>Comment Sentiment</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="card">
+      <span class="eyebrow">SENTIMENT ANALYSIS</span>
+      <h1>How does it sound?</h1>
+      <p class="intro">Paste a comment below to see if it reads as positive or negative.</p>
+
+      <form id="sentiment-form">
+        <label for="comment">Your comment</label>
+        <textarea
+          id="comment"
+          name="comment"
+          rows="6"
+          maxlength="5000"
+          placeholder="Type or paste a comment here..."
+          required
+        ></textarea>
+        <button id="analyze-button" type="submit" disabled>Loading the model...</button>
+      </form>
+
+      <p id="status" class="status" role="status" aria-live="polite">Loading the training examples...</p>
+      <section id="result" class="result" aria-live="polite" hidden>
+        <span id="sentiment-label" class="result-label"></span>
+        <span id="confidence" class="confidence"></span>
+      </section>
+      <p class="note">Trained from the included comments. Neutral examples are skipped.</p>
+    </main>
+  </body>
+</html>
